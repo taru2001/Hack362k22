@@ -164,7 +164,7 @@
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                         <div class="input-group input-group-outline">
-                            <label class="form-label">Type here...</label>
+                            <label class="form-label">Search here</label>
                             <input type="text" class="form-control">
                         </div>
                     </div>
@@ -1239,5 +1239,27 @@
     <script src="static/dashboard/assets/js/material-dashboard.min.js?v=3.0.2"></script>
     <script type="text/javascript" src="{% static 'dashboard/assets/material-dashboard.min.js' %}"></script>
 </body>
+
+
+<script>
+    // var x = document.getElementById("demo");
+    getLocation();
+    // var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  alert( "Latitude: " + position.coords.latitude + 
+  "   Longitude: " + position.coords.longitude);
+}
+
+</script>
+
 
 </html>
