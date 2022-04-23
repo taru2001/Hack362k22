@@ -1,0 +1,35 @@
+<!-- Modal -->
+
+
+<div class="modal fade" id="buy_modal_{{product.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{product.name}}</h5>
+
+            </div>
+            <form action="#" method="GET">{% csrf_token %}
+                <div class="modal-body">
+                    Price Per Piece : <input type="number" id="price_{{product.id}}" value="{{product.base_price}}"
+                        disabled><br>
+                    Quantity : <input type="number" id="quantity_{{product.id}}" onchange="myfunc()"><br>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Buy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function myfunc() {
+        console.log(id);
+        // var price = document.getElementById(`price_${id}`).value;
+        // var q = document.getElementById(`quantity_${id}`).value;
+        // console.log(price);
+        // document.getElementById(`tot_price_${id}`).value = q * price;
+    }
+</script>
