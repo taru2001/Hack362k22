@@ -11,6 +11,7 @@ def home(request):
     log=0
     if user.is_authenticated:
         log=1
+        return redirect('dashboard')
     return render(request , "home/home.html" , {'log':log})
 
 def signup(request):
@@ -41,6 +42,7 @@ def signup(request):
 
         if user :
             login(request,user)
+            return redirect('dashboard')
 
         
 
@@ -62,6 +64,7 @@ def login_user(request):
 
         if conf_user:
             login(request,conf_user)
+            return redirect('dashboard')
 
     return redirect('home')
 
