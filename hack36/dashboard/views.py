@@ -8,4 +8,5 @@ from uuid import uuid4
 
 
 def dashboard(request):
-    return render(request , 'dashboard/dashboard.html')
+    user = request.user
+    return render(request , 'dashboard/dashboard.html' , {'name': user.first_name})
