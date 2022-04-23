@@ -293,6 +293,7 @@
         <div class="container">
             <br><br><br>
 
+            {% for product in products %}
             <div class="card-group">
                 <div class="card" data-animation="true">
                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
@@ -316,17 +317,15 @@
                             </button>
                         </div>
                         <h5 class="font-weight-normal mt-3">
-                            <a href="javascript:;">Cozy 5 Stars Apartment</a>
+                            <a href="javascript:;">{{product.name}}</a>
                         </h5>
                         <p class="mb-0">
-                            The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to
-                            "Naviglio" where you
-                            can enjoy the main night life in Barcelona.
+                            {{product.description}}
                         </p>
                     </div>
                     <hr class="dark horizontal my-0">
                     <div class="card-footer d-flex">
-                        <p class="font-weight-normal my-auto">$899/night</p>
+                        <p class="font-weight-normal my-auto">{{}}</p>
                         <i class="material-icons position-relative ms-auto text-lg me-1 my-auto">place</i>
                         <p class="text-sm my-auto"> Barcelona, Spain</p>
                     </div>
@@ -480,6 +479,7 @@
                     </div>
                 </div>
             </div>
+            {% endfor %}
 
         </div>
 

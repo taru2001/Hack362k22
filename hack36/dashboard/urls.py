@@ -8,5 +8,5 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('', views.dashboard , name='dashboard'),
-    path('fruits/' , views.fruits , name='fruits')
+    path('category/<str:category>/' , views.watch_category , name='fruits')
 ]
