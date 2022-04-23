@@ -1,10 +1,11 @@
-<h1 align="center">Rashan Adda</h1>
+<h1 align="center">Raashan Adda</h1>
 
-<h3>The art of teaching is the art of Assisting Discovery </h3>
+<h3>In country of countless voices every voice counts</h3>
 
 [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://html.com)
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 [![forthebadge made-with-javascipt](http://ForTheBadge.com/images/badges/made-with-javascript.svg)](https://www.javascript.com/)
+
 
 
 <img src="Logo.png" align="center">
@@ -28,6 +29,7 @@ Solution : Revolutionising consumption and selling of local products by changing
   4) Sqlite3
   5) CSS
   6) EJS
+  7) Machiene Learing
   
 <a name="feed"></a>
 ## Feedback:
