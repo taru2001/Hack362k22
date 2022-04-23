@@ -7,7 +7,11 @@ from django.contrib import messages
 from uuid import uuid4
 
 def home(request):
-    return render(request , "home/home.html")
+    user = request.user
+    log=0
+    if user.is_authenticated:
+        log=1
+    return render(request , "home/home.html" , {'log':log})
 
 def signup(request):
     if request.method == 'POST':
@@ -33,6 +37,36 @@ def signup(request):
         curr_user.save()
         print("registered")
 
+        user = authenticate(username = email , password = password)
+
+        if user :
+            login(request,user)
+
+        
+
         return redirect('home')
+
+def login_user(request):
+    user = request.user
+
+    if user.is_authenticated:
+        return redirect('home')
+
+    if request.method == 'POST':
+        femail = request.POST.get('email',"")
+        fpassword = request.POST.get('password',"")
+        
+        all_users = User.objects.all()
+
+        conf_user = authenticate(username=femail,password=fpassword)
+
+        if conf_user:
+            login(request,conf_user)
+
+    return redirect('home')
+
+def logout_user(request):
+    logout(request)
+    return redirect('home')
 
         

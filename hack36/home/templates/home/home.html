@@ -65,8 +65,15 @@
                                         <li><a href="#features">FEATURES</a></li>
                                         <li><a href="#special">PRICINGS</a></li>
                                         <li><a href="#abouts">CLIENTS</a></li>
+                                        {% if log == 0 %}
                                         <li><a href="#login">LOGIN</a></li>
+                                        {% endif %}
+                                        {% if log == 0 %}
                                         <li><a href="#footer">SIGN UP</a></li>
+                                        {% endif %}
+                                        {% if log %}
+                                        <li><a href="logout/">LOGOUT</a></li>
+                                        {% endif %}
 
                                     </ul>
                                 </div><!-- /.navbar-collapse -->
@@ -111,7 +118,7 @@
 
 
 
-    <section id="features" class="features sections">
+    <!-- <section id="features" class="features sections">
         <div class="container">
             <div class="row">
                 <div class="features_content text-center">
@@ -142,7 +149,8 @@
                 </div>
             </div>
         </div>
-    </section><!-- End of Abouts Section -->
+    </section>End of Abouts Section -->
+
 
     <section id="special" class="special sections">
         <div class="container">
@@ -389,7 +397,8 @@
     </section>
 
 
-    <footer id="login" class="login" style="background-image: url('static/home/images/bannerbg.jpg');padding: 2rem;">
+    {% if log == 0 %}
+    <footer id="login" class="footer" style="padding: 3rem;">
         <div class="container">
             <div class="row">
 
@@ -408,7 +417,7 @@
                                         <div class="col-sm-12">
                                             <div class="form-group">
                                                 <input type="email" class="form-control" name="email"
-                                                    placeholder="Name">
+                                                    placeholder="Email">
                                             </div>
                                         </div>
 
@@ -453,11 +462,45 @@
 
         </div>
     </footer>
+    {% endif %}
+
+    <section id="features" class="features sections">
+        <div class="container">
+            <div class="row">
+                <div class="features_content text-center">
+                    <div class="col-md-4">
+                        <div class="sinle_features wow slideInUp" data-wow-duration="1s">
+                            <img src="static/home/images/icon1.png" alt="" />
+                            <h5>Turnip greens</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra
+                                elementuma. Aliquam erat volutpat. </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="sinle_features wow slideInUp" data-wow-duration="1.5s">
+                            <img src="{% static 'home/images/icon1.png' %}" alt="" />
+                            <h5>Turnip greens</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra
+                                elementuma. Aliquam erat volutpat. </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="sinle_features wow slideInUp" data-wow-duration="2s">
+                            <img src="{% static 'home/images/icon1.png' %}" alt="" />
+                            <h5>Turnip greens</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra
+                                elementuma. Aliquam erat volutpat. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
     <!-- footer Section -->
-
+    {% if log == 0 %}
     <footer id="footer" class="footer">
         <div class="container">
             <div class="row">
@@ -579,6 +622,7 @@
         </div>
         </div>
     </footer>
+    {% endif %}
 
 
 
